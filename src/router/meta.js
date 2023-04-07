@@ -18,7 +18,7 @@ Notes:
     },
 */
 
-const appName = 'Sprout Assessment';
+const appName = 'V-Wind';
 
 const meta = {
   home: {
