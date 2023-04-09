@@ -61,3 +61,21 @@ npm run test:e2e
 
 - Fontawesome: Used to apply icon in the page (https://fontawesome.com/docs/web/use-with/vue/)
 ```
+
+#### Script Code Standards
+
+```
+Add this title comment when working on `<script>`:
+
+1.) Base Imports
+2.) Import Services
+3.) Import Components
+4.) Import 3rd party components/plugins
+5.) Import Icons
+6.) Import Stores
+7.) Set Props
+8.) Set Emits
+9.) Set Datas
+10.) Set Functions
+11.) Initialize Functions
+```

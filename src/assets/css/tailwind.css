@@ -6,3 +6,19 @@
 @tailwind utilities;
 
 /* Custom Global Style */
+@layer base {
+  header,
+  main,
+  footer {
+    width: 100%;
+  }
+}
+
+@layer components {
+}
+
+@layer utilities {
+  .link {
+    @apply bg-transparent p-2 inline-block rounded-md duration-200 ease-in-out text-black font-semibold hover:text-primary-500 hover:bg-slate-200 active:scale-90;
+  }
+}
