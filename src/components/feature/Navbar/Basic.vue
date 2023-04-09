@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed h-16 bg-white drop-shadow-md px-16 py-2 w-full">
+  <nav class="fixed z-20 h-16 bg-white drop-shadow-md px-16 py-2 w-full">
     <div class="container h-full flex justify-between">
       <router-link class="link" :to="{ name: 'BaseRoute::home' }">
         <div class="flex">
@@ -40,9 +40,3 @@
 // Import Icons
 import { ICO_Github } from '../../../assets/images/icons/custom/index.js';
 </script>
-
-<style scoped>
-nav {
-  width: inherit;
-}
-</style>

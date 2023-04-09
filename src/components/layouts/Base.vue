@@ -2,14 +2,19 @@
   <header>
     <CMP_Navbar_Basic />
   </header>
-  <main class="py-16">
-    <!-- <CMP_Sidemenu_Basic /> -->
-    <router-view />
+  <main class="pt-16">
+    <div class="flex">
+      <CMP_Sidemenu_Basic />
+
+      <div class="ml-[18em] p-10">
+        <router-view />
+      </div>
+    </div>
   </main>
 </template>
 
 <script setup>
 // Import Components
 import CMP_Navbar_Basic from '../feature/Navbar/Basic.vue';
-// import CMP_Sidemenu_Basic from '../feature/Sidemenu/Basic.vue';
+import CMP_Sidemenu_Basic from '../feature/Sidemenu/Basic.vue';
 </script>

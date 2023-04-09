@@ -1,17 +1,18 @@
 /* 
   Notes:
     - Hex Shade Generator (https://maketintsandshades.com/)
+    - Hex Shade Generator (https://maketintsandshades.com/)
 /*
 
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
+const customColors = require('./tailwind-colors');
 
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      // Note: @media (min-width: 1279px) || Large Laptops and above+
+      // Note: @media (min-width: 1200px) || Large Laptops and above+
       xl: { min: '1200px' },
 
       // Note: @media (max-width: 1199px) || Laptops
@@ -33,22 +34,7 @@ module.exports = {
       fontFamily: {
         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       },
-      colors: {
-        primary: {
-          100: '#cdf0f7',
-          200: '#9ce2ee',
-          300: '#6ad3e6',
-          400: '#39c5dd',
-          500: '#07b6d5',
-          600: '#0692aa',
-          700: '#046d80',
-          800: '#034955',
-          900: '#01242b',
-        },
-        success: colors.green,
-        danger: colors.rose,
-        warning: colors.yellow,
-      },
+      colors: customColors,
     },
   },
   plugins: [require('@tailwindcss/typography'), require('autoprefixer')],

@@ -1,29 +1,93 @@
 <template>
-  <aside class="fixed h-16 bg-white drop-shadow-md px-16 py-2 w-full">
-    <div class="container h-full flex justify-between">
-      <div class="flex">
-        <img
-          class="h-full align-middle"
-          src="@/assets/images/logo/v-wind.png"
-          alt="v-wind"
-        />
-        <span class="mt-2 text-2xl font-bold ml-2">V-Wind</span>
-      </div>
-      <ul class="flex">
-        <li class="ml-2">
-          <img
-            class="inline-block h-10 w-10 rounded-full ring-2 ring-white object-cover cursor-pointer"
-            src="https://images.unsplash.com/photo-1623184663110-89ba5b565eb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c21pbGluZyUyMG1hbnxlbnwwfHwwfHw%3D&w=1000&q=80"
-            alt="avatar"
-          />
-        </li>
-      </ul>
-    </div>
-  </aside>
+  <nav class="fixed z-10 h-screen bg-gray-200 drop-shadow-md w-[18em]">
+    <section
+      class="relative h-[20em] w-full overflow-hidden"
+      :style="{ background: waveSkyColor }"
+    >
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </section>
+  </nav>
 </template>
 
+<script setup>
+// Base Imports
+import { ref, onMounted } from 'vue';
+import colors from '../../../../tailwind-colors';
+
+// Set Datas
+const waveSkyColor = ref(colors.primary[500]);
+
+// Set Functions
+const setWaveSky = () => {
+  let today = new Date();
+  let currentHour = today.getHours();
+
+  if (currentHour < 12) {
+    console.log('good morning');
+  } else if (curHr < 18) {
+    console.log('good afternoon');
+  } else {
+    console.log('good evening');
+  }
+};
+
+// Initialize Functions
+onMounted(() => {
+  setWaveSky();
+});
+</script>
+
 <style scoped>
-nav {
-  width: inherit;
+.wave {
+  @apply absolute bottom-0 left-0 h-[100px] w-full;
+  background: url('https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png');
+  background-size: 1000px 100px;
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(143deg) brightness(96%)
+    contrast(88%);
+}
+
+.wave:nth-child(1) {
+  @apply z-40 opacity-100 bottom-0;
+  animation: wave 20s linear infinite;
+  animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+  @apply z-30 opacity-50 bottom-[10px];
+  animation: wave2 10s linear infinite;
+  animation-delay: -5s;
+}
+
+.wave:nth-child(3) {
+  @apply z-20 opacity-20 bottom-[15px];
+  animation: wave 15s linear infinite;
+  animation-delay: -2s;
+}
+
+.wave:nth-child(4) {
+  @apply z-10 opacity-70 bottom-[20px];
+  animation: wave2 5s linear infinite;
+  animation-delay: -5s;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 1000px;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1000px;
+  }
 }
 </style>
