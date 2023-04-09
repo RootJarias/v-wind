@@ -1,9 +1,16 @@
 <template>
   <nav class="fixed z-10 h-screen bg-gray-200 drop-shadow-md w-[18em]">
     <section
-      class="relative h-[20em] w-full overflow-hidden"
-      :style="{ background: waveSkyColor }"
+      class="relative h-[20em] w-full overflow-hidden ease-in-out duration-[5000ms] animated"
+      :class="waveSky.color"
     >
+      <div
+        class="absolute top-[100px] left-1/2 w-full text-center translate-x-[-50%] translate-y-[-50%]"
+      >
+        <h3 class="text-2xl font-bold text-white">
+          {{ waveSky.dayTimeText }}
+        </h3>
+      </div>
       <div class="wave"></div>
       <div class="wave"></div>
       <div class="wave"></div>
@@ -15,10 +22,12 @@
 <script setup>
 // Base Imports
 import { ref, onMounted } from 'vue';
-import colors from '../../../../tailwind-colors';
 
 // Set Datas
-const waveSkyColor = ref(colors.primary[500]);
+const waveSky = ref({
+  dayTimeText: null,
+  colorClass: 'waveSky--morning',
+});
 
 // Set Functions
 const setWaveSky = () => {
@@ -26,11 +35,35 @@ const setWaveSky = () => {
   let currentHour = today.getHours();
 
   if (currentHour < 12) {
-    console.log('good morning');
+    setWaveSkyColor('morning');
   } else if (curHr < 18) {
-    console.log('good afternoon');
+    setWaveSkyColor('afternoon');
   } else {
-    console.log('good evening');
+    setWaveSkyColor('evening');
+  }
+};
+
+const setWaveSkyColor = (dayTime) => {
+  switch (dayTime) {
+    case 'morning':
+      waveSky.value.dayTimeText = 'Good Morning!';
+      waveSky.value.color = 'waveSky--morning';
+      break;
+
+    case 'afternoon':
+      waveSky.value.dayTimeText = 'Good Afternoon!';
+      waveSky.value.color = 'waveSky--afternoon';
+      break;
+
+    case 'evening':
+      waveSky.value.dayTimeText = 'Good Evening!';
+      waveSky.value.color = 'waveSky--evening';
+      break;
+
+    default:
+      waveSky.value.dayTimeText = 'Good Morning!';
+      waveSky.value.color = 'waveSky--morning';
+      break;
   }
 };
 
@@ -41,6 +74,73 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.waveSky--morning {
+  background: linear-gradient(180deg, #392033, #392033, #07b6d5, #07b6d5);
+  background-size: 800% 800%;
+  -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -moz-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -o-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  animation: waveSky--animate 5s ease 0s 1 normal forwards;
+}
+
+.waveSky--afternoon {
+  background: linear-gradient(180deg, #07b6d5, #07b6d5, #f8aa27, #f8aa27);
+  background-size: 800% 800%;
+  -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -moz-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -o-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  animation: waveSky--animate 5s ease 0s 1 normal forwards;
+}
+
+.waveSky--evening {
+  background: linear-gradient(180deg, #f8aa27, #f8aa27, #392033, #392033);
+  background-size: 800% 800%;
+  -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -moz-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -o-animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  animation: waveSky--animate 5s ease 0s 1 normal forwards;
+}
+
+@-webkit-keyframes waveSky--animate {
+  0% {
+    background-position: 50% 100%;
+  }
+
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@-moz-keyframes waveSky--animate {
+  0% {
+    background-position: 51% 0%;
+  }
+
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@-o-keyframes waveSky--animate {
+  0% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes waveSky--animate {
+  0% {
+    background-position: 50% 0%;
+  }
+
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
 .wave {
   @apply absolute bottom-0 left-0 h-[100px] w-full;
   background: url('https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png');

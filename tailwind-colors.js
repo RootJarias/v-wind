@@ -1,4 +1,4 @@
-// Setting up Default Colors
+// Setting up extended default colors for tailwind config
 import colors from 'tailwindcss/colors';
 
 export default {
