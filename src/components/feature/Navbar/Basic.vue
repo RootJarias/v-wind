@@ -13,13 +13,19 @@
       </router-link>
       <ul class="flex space-x-4">
         <li class="my-auto">
-          <a class="link" href="#">Home</a>
+          <router-link class="link" :to="{ name: 'BaseRoute::home' }">
+            Home
+          </router-link>
         </li>
         <li class="my-auto">
-          <a class="link" href="#">Updates</a>
+          <router-link class="link" :to="{ name: 'BaseRoute::updates' }">
+            Updates
+          </router-link>
         </li>
         <li class="my-auto">
-          <a class="link" href="#">About Us</a>
+          <router-link class="link" :to="{ name: 'BaseRoute::aboutUs' }">
+            About Us
+          </router-link>
         </li>
         <li class="my-auto">
           <a

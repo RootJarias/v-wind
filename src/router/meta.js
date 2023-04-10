@@ -21,14 +21,70 @@ Notes:
 const appName = 'V-Wind';
 
 const meta = {
-  home: {
-    title: `${appName} - Home`,
-    metaTags: [
-      {
-        name: 'description',
-        content: 'This is a example meta description.',
-      },
-    ],
+  base: {
+    home: {
+      title: `${appName} - Home`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
+    updates: {
+      title: `${appName} - Updates`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
+    aboutUs: {
+      title: `${appName} - About Us`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
+    components: {
+      title: `${appName} - Components`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
+    layouts: {
+      title: `${appName} - Layouts`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
+    utilities: {
+      title: `${appName} - Utilities`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
+    tools: {
+      title: `${appName} - Tools`,
+      metaTags: [
+        {
+          name: 'description',
+          content: 'This is a example meta description.',
+        },
+      ],
+    },
   },
 };
 

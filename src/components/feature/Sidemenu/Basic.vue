@@ -5,11 +5,9 @@
       :class="waveSky.color"
     >
       <div
-        class="absolute top-[100px] left-1/2 w-full text-center translate-x-[-50%] translate-y-[-50%]"
+        class="absolute top-[100px] left-1/2 w-[90%] text-center translate-x-[-50%] translate-y-[-50%]"
       >
-        <h3 class="text-2xl font-bold text-white">
-          {{ waveSky.dayTimeText }}
-        </h3>
+        <h3 class="_typewriter">{{ waveSky.dayTimeText }}</h3>
       </div>
       <div class="block">
         <div class="_wave"></div>
@@ -18,31 +16,63 @@
         <div class="_wave"></div>
       </div>
     </section>
-    <hr class="bg-gray-700" />
-    <ul class="p-4">
+    <ul
+      class="flex flex-col space-y-2 h-[calc(100%-24em)] overflow-auto py-5 ease-in-out duration-300 border-l-8 hover:border-l-primary-600"
+      :class="{
+        'border-l-primary-600':
+          route.name === 'BaseRoute::components' ||
+          route.name === 'BaseRoute::layouts' ||
+          route.name === 'BaseRoute::utilities' ||
+          route.name === 'BaseRoute::tools',
+      }"
+    >
       <li>
-        <a href="#">
-          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+        <router-link
+          class="_sidemenu-item"
+          :class="{
+            _active: route.name === 'BaseRoute::components',
+          }"
+          :to="{ name: 'BaseRoute::components' }"
+        >
+          <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Components</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#">
-          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+        <router-link
+          class="_sidemenu-item"
+          :class="{
+            _active: route.name === 'BaseRoute::layouts',
+          }"
+          :to="{ name: 'BaseRoute::layouts' }"
+        >
+          <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Layouts</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#">
-          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+        <router-link
+          class="_sidemenu-item"
+          :class="{
+            _active: route.name === 'BaseRoute::utilities',
+          }"
+          :to="{ name: 'BaseRoute::utilities' }"
+        >
+          <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Utilities</span>
-        </a>
+        </router-link>
       </li>
       <li>
-        <a href="#">
-          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+        <router-link
+          class="_sidemenu-item"
+          :class="{
+            _active: route.name === 'BaseRoute::tools',
+          }"
+          :to="{ name: 'BaseRoute::tools' }"
+        >
+          <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Tools</span>
-        </a>
+        </router-link>
       </li>
     </ul>
   </nav>
@@ -51,8 +81,11 @@
 <script setup>
 // Base Imports
 import { ref, onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 
 // Set Datas
+const route = useRoute();
+
 const waveSky = ref({
   dayTimeText: null,
   colorClass: '_waveSky--morning',
@@ -169,7 +202,6 @@ onMounted(() => {
     background-position: 50% 100%;
   }
 }
-
 ._wave {
   @apply absolute bottom-0 left-0 h-[100px] w-full;
   background: url('https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png');
@@ -220,5 +252,39 @@ onMounted(() => {
   100% {
     background-position-x: -1000px;
   }
+}
+
+._typewriter {
+  @apply m-auto text-2xl font-semibold text-white overflow-hidden border-r-2 border-r-white whitespace-nowrap tracking-[.15em];
+  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #fff;
+  }
+}
+
+._sidemenu-item {
+  @apply block w-[calc(100%-30px)] px-5 py-3 rounded-tr-[20px] rounded-br-[20px] text-gray-700 font-semibold uppercase ease-in-out duration-100 hover:bg-primary-600 hover:text-white hover:drop-shadow-lg hover:scale-105 active:scale-100;
+}
+
+._sidemenu-item._active {
+  @apply bg-primary-600 text-white drop-shadow-lg scale-105 active:scale-100;
 }
 </style>
