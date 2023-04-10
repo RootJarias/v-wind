@@ -3,7 +3,7 @@
     class="fixed z-20 h-16 bg-white drop-shadow-md px-16 py-2 w-full md:px-4"
   >
     <div class="container h-full flex justify-between">
-      <router-link class="link" :to="{ name: 'BaseRoute::home' }">
+      <router-link class="_link" :to="{ name: 'BaseRoute::home' }">
         <div class="flex">
           <img
             class="h-[35px] align-middle"
@@ -15,23 +15,41 @@
       </router-link>
       <ul class="flex space-x-2 md:hidden">
         <li class="my-auto">
-          <router-link class="link" :to="{ name: 'BaseRoute::home' }">
+          <router-link
+            class="_link"
+            :class="{
+              _active: route.name === 'BaseRoute::home',
+            }"
+            :to="{ name: 'BaseRoute::home' }"
+          >
             Home
           </router-link>
         </li>
         <li class="my-auto">
-          <router-link class="link" :to="{ name: 'BaseRoute::updates' }">
+          <router-link
+            class="_link"
+            :class="{
+              _active: route.name === 'BaseRoute::updates',
+            }"
+            :to="{ name: 'BaseRoute::updates' }"
+          >
             Updates
           </router-link>
         </li>
         <li class="my-auto">
-          <router-link class="link" :to="{ name: 'BaseRoute::aboutUs' }">
+          <router-link
+            class="_link"
+            :class="{
+              _active: route.name === 'BaseRoute::aboutUs',
+            }"
+            :to="{ name: 'BaseRoute::aboutUs' }"
+          >
             About Us
           </router-link>
         </li>
         <li class="my-auto">
           <a
-            class="link"
+            class="_link"
             href="https://github.com/RootJarias"
             target="_blank"
             rel="noopener noreferrer"
@@ -50,9 +68,12 @@
 </template>
 
 <script setup>
-// Import Components
-// import { CMP_Drawer } from '../';
+// Base Imports
+import { useRoute } from 'vue-router';
 
 // Import Icons
 import { ICO_Github } from '@/assets/images/icons/custom/index.js';
+
+// Set Datas
+const route = useRoute();
 </script>

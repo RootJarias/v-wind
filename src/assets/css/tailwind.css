@@ -18,7 +18,11 @@
 }
 
 @layer utilities {
-  .link {
+  ._link {
     @apply bg-transparent py-2 px-4 inline-block rounded-md cursor-pointer duration-200 ease-in-out text-black font-semibold hover:text-primary-500 hover:bg-slate-200 active:scale-90;
+  }
+
+  ._link._active {
+    @apply text-primary-500 bg-slate-200;
   }
 }
