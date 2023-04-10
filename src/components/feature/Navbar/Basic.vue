@@ -59,17 +59,22 @@
         </li>
       </ul>
       <div class="hidden md:block">
-        <button class="link text-xl">
+        <button class="_link text-xl">
           <font-awesome-icon :icon="['fas', 'fa-bars']" />
         </button>
       </div>
     </div>
+
+    <CMP_Drawer />
   </nav>
 </template>
 
 <script setup>
 // Base Imports
 import { useRoute } from 'vue-router';
+
+// Import Components
+import CMP_Drawer from '@/components/feature/Drawer/Basic.vue';
 
 // Import Icons
 import { ICO_Github } from '@/assets/images/icons/custom/index.js';

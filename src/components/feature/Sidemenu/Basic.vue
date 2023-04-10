@@ -256,7 +256,7 @@ onMounted(() => {
 
 ._typewriter {
   @apply m-auto text-2xl font-semibold text-white overflow-hidden border-r-2 border-r-white whitespace-nowrap tracking-[.15em];
-  animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+  animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
@@ -281,7 +281,7 @@ onMounted(() => {
 }
 
 ._sidemenu-item {
-  @apply block w-[calc(100%-30px)] px-5 py-3 rounded-tr-[20px] rounded-br-[20px] text-gray-700 font-semibold uppercase ease-in-out duration-100 hover:bg-primary-600 hover:text-white hover:drop-shadow-lg hover:scale-105 active:scale-100;
+  @apply block w-[calc(100%-30px)] px-5 py-3 rounded-tr-[20px] rounded-br-[20px] text-gray-700 font-semibold uppercase ease-in-out duration-100 hover:bg-primary-600 hover:text-white hover:drop-shadow-lg active:scale-100;
 }
 
 ._sidemenu-item._active {
