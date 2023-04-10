@@ -19,6 +19,6 @@
 
 @layer utilities {
   .link {
-    @apply bg-transparent p-2 inline-block rounded-md duration-200 ease-in-out text-black font-semibold hover:text-primary-500 hover:bg-slate-200 active:scale-90;
+    @apply bg-transparent p-2 inline-block rounded-md cursor-pointer duration-200 ease-in-out text-black font-semibold hover:text-primary-500 hover:bg-slate-200 active:scale-90;
   }
 }

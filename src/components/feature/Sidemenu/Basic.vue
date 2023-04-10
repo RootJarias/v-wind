@@ -11,11 +11,40 @@
           {{ waveSky.dayTimeText }}
         </h3>
       </div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
-      <div class="wave"></div>
+      <div class="block">
+        <div class="_wave"></div>
+        <div class="_wave"></div>
+        <div class="_wave"></div>
+        <div class="_wave"></div>
+      </div>
     </section>
+    <hr class="bg-gray-700" />
+    <ul class="p-4">
+      <li>
+        <a href="#">
+          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+          <span>Components</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+          <span>Layouts</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+          <span>Utilities</span>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <font-awesome-icon class="mr-2" :icon="['fas', 'plus']" />
+          <span>Tools</span>
+        </a>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -26,7 +55,7 @@ import { ref, onMounted } from 'vue';
 // Set Datas
 const waveSky = ref({
   dayTimeText: null,
-  colorClass: 'waveSky--morning',
+  colorClass: '_waveSky--morning',
 });
 
 // Set Functions
@@ -36,7 +65,7 @@ const setWaveSky = () => {
 
   if (currentHour < 12) {
     setWaveSkyColor('morning');
-  } else if (curHr < 18) {
+  } else if (currentHour < 18) {
     setWaveSkyColor('afternoon');
   } else {
     setWaveSkyColor('evening');
@@ -47,22 +76,22 @@ const setWaveSkyColor = (dayTime) => {
   switch (dayTime) {
     case 'morning':
       waveSky.value.dayTimeText = 'Good Morning!';
-      waveSky.value.color = 'waveSky--morning';
+      waveSky.value.color = '_waveSky--morning';
       break;
 
     case 'afternoon':
       waveSky.value.dayTimeText = 'Good Afternoon!';
-      waveSky.value.color = 'waveSky--afternoon';
+      waveSky.value.color = '_waveSky--afternoon';
       break;
 
     case 'evening':
       waveSky.value.dayTimeText = 'Good Evening!';
-      waveSky.value.color = 'waveSky--evening';
+      waveSky.value.color = '_waveSky--evening';
       break;
 
     default:
       waveSky.value.dayTimeText = 'Good Morning!';
-      waveSky.value.color = 'waveSky--morning';
+      waveSky.value.color = '_waveSky--morning';
       break;
   }
 };
@@ -74,7 +103,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.waveSky--morning {
+._waveSky--morning {
   background: linear-gradient(180deg, #392033, #392033, #07b6d5, #07b6d5);
   background-size: 800% 800%;
   -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
@@ -83,7 +112,7 @@ onMounted(() => {
   animation: waveSky--animate 5s ease 0s 1 normal forwards;
 }
 
-.waveSky--afternoon {
+._waveSky--afternoon {
   background: linear-gradient(180deg, #07b6d5, #07b6d5, #f8aa27, #f8aa27);
   background-size: 800% 800%;
   -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
@@ -92,7 +121,7 @@ onMounted(() => {
   animation: waveSky--animate 5s ease 0s 1 normal forwards;
 }
 
-.waveSky--evening {
+._waveSky--evening {
   background: linear-gradient(180deg, #f8aa27, #f8aa27, #392033, #392033);
   background-size: 800% 800%;
   -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
@@ -141,7 +170,7 @@ onMounted(() => {
   }
 }
 
-.wave {
+._wave {
   @apply absolute bottom-0 left-0 h-[100px] w-full;
   background: url('https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png');
   background-size: 1000px 100px;
@@ -149,43 +178,45 @@ onMounted(() => {
     contrast(88%);
 }
 
-.wave:nth-child(1) {
+._wave:nth-child(1) {
   @apply z-40 opacity-100 bottom-0;
-  animation: wave 20s linear infinite;
+  animation: wave-forward 6s linear infinite;
   animation-delay: 0s;
 }
 
-.wave:nth-child(2) {
+._wave:nth-child(2) {
   @apply z-30 opacity-50 bottom-[10px];
-  animation: wave2 10s linear infinite;
+  animation: wave-backward 10s linear infinite;
   animation-delay: -5s;
 }
 
-.wave:nth-child(3) {
+._wave:nth-child(3) {
   @apply z-20 opacity-20 bottom-[15px];
-  animation: wave 15s linear infinite;
+  animation: wave-forward 5s linear infinite;
   animation-delay: -2s;
 }
 
-.wave:nth-child(4) {
+._wave:nth-child(4) {
   @apply z-10 opacity-70 bottom-[20px];
-  animation: wave2 5s linear infinite;
+  animation: wave-backward 8s linear infinite;
   animation-delay: -5s;
 }
 
-@keyframes wave {
+@keyframes wave-forward {
   0% {
     background-position-x: 0px;
   }
+
   100% {
     background-position-x: 1000px;
   }
 }
 
-@keyframes wave2 {
+@keyframes wave-backward {
   0% {
     background-position-x: 0px;
   }
+
   100% {
     background-position-x: -1000px;
   }
