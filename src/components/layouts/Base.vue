@@ -4,9 +4,9 @@
   </header>
   <main class="pt-16">
     <div class="flex">
-      <CMP_Sidemenu_Basic />
+      <CMP_Sidemenu_Basic class="md:hidden" />
 
-      <div class="ml-[18em] p-10">
+      <div class="w-full ml-[18em] p-10 md:ml-0 md:p-5 sm:p-3">
         <router-view />
       </div>
     </div>
@@ -15,6 +15,6 @@
 
 <script setup>
 // Import Components
-import CMP_Navbar_Basic from '../feature/Navbar/Basic.vue';
-import CMP_Sidemenu_Basic from '../feature/Sidemenu/Basic.vue';
+import CMP_Navbar_Basic from '@/components/feature/Navbar/Basic.vue';
+import CMP_Sidemenu_Basic from '@/components/feature/Sidemenu/Basic.vue';
 </script>

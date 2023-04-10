@@ -1,11 +1,11 @@
 <template>
   <nav class="fixed z-10 h-screen bg-gray-200 drop-shadow-md w-[18em]">
     <section
-      class="relative h-[20em] w-full overflow-hidden ease-in-out duration-[5000ms] animated"
+      class="relative h-[20em] w-full overflow-hidden ease-in-out duration-[5000ms]"
       :class="waveSky.color"
     >
       <div
-        class="absolute top-[100px] left-1/2 w-[90%] text-center translate-x-[-50%] translate-y-[-50%]"
+        class="absolute top-[100px] left-1/2 w-auto text-center translate-x-[-50%] translate-y-[-50%]"
       >
         <h3 class="_typewriter">{{ waveSky.dayTimeText }}</h3>
       </div>
@@ -139,31 +139,31 @@ onMounted(() => {
 ._waveSky--morning {
   background: linear-gradient(180deg, #392033, #392033, #07b6d5, #07b6d5);
   background-size: 800% 800%;
-  -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  -moz-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  -o-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -webkit-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  -moz-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  -o-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  animation: waveSky-gradient 5s ease 0s 1 normal forwards;
 }
 
 ._waveSky--afternoon {
   background: linear-gradient(180deg, #07b6d5, #07b6d5, #f8aa27, #f8aa27);
   background-size: 800% 800%;
-  -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  -moz-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  -o-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -webkit-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  -moz-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  -o-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  animation: waveSky-gradient 5s ease 0s 1 normal forwards;
 }
 
 ._waveSky--evening {
   background: linear-gradient(180deg, #f8aa27, #f8aa27, #392033, #392033);
   background-size: 800% 800%;
-  -webkit-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  -moz-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  -o-animation: waveSky--animate 5s ease 0s 1 normal forwards;
-  animation: waveSky--animate 5s ease 0s 1 normal forwards;
+  -webkit-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  -moz-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  -o-animation: waveSky-gradient 5s ease 0s 1 normal forwards;
+  animation: waveSky-gradient 5s ease 0s 1 normal forwards;
 }
 
-@-webkit-keyframes waveSky--animate {
+@-webkit-keyframes waveSky-gradient {
   0% {
     background-position: 50% 100%;
   }
@@ -173,7 +173,7 @@ onMounted(() => {
   }
 }
 
-@-moz-keyframes waveSky--animate {
+@-moz-keyframes waveSky-gradient {
   0% {
     background-position: 51% 0%;
   }
@@ -183,7 +183,7 @@ onMounted(() => {
   }
 }
 
-@-o-keyframes waveSky--animate {
+@-o-keyframes waveSky-gradient {
   0% {
     background-position: 50% 0%;
   }
@@ -193,7 +193,7 @@ onMounted(() => {
   }
 }
 
-@keyframes waveSky--animate {
+@keyframes waveSky-gradient {
   0% {
     background-position: 50% 0%;
   }
@@ -204,7 +204,7 @@ onMounted(() => {
 }
 ._wave {
   @apply absolute bottom-0 left-0 h-[100px] w-full;
-  background: url('https://1.bp.blogspot.com/-xQUc-TovqDk/XdxogmMqIRI/AAAAAAAACvI/AizpnE509UMGBcTiLJ58BC6iViPYGYQfQCLcBGAsYHQ/s1600/wave.png');
+  background: url('@/assets/images/wave.png');
   background-size: 1000px 100px;
   filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(143deg) brightness(96%)
     contrast(88%);

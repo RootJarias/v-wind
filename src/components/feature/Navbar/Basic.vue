@@ -1,5 +1,7 @@
 <template>
-  <nav class="fixed z-20 h-16 bg-white drop-shadow-md px-16 py-2 w-full">
+  <nav
+    class="fixed z-20 h-16 bg-white drop-shadow-md px-16 py-2 w-full md:px-4"
+  >
     <div class="container h-full flex justify-between">
       <router-link class="link" :to="{ name: 'BaseRoute::home' }">
         <div class="flex">
@@ -11,7 +13,7 @@
           <span class="text-2xl font-bold ml-2">V-Wind</span>
         </div>
       </router-link>
-      <ul class="flex space-x-4">
+      <ul class="flex space-x-2 md:hidden">
         <li class="my-auto">
           <router-link class="link" :to="{ name: 'BaseRoute::home' }">
             Home
@@ -38,11 +40,19 @@
           </a>
         </li>
       </ul>
+      <div class="hidden md:block">
+        <button class="link text-xl">
+          <font-awesome-icon :icon="['fas', 'fa-bars']" />
+        </button>
+      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
+// Import Components
+// import { CMP_Drawer } from '../';
+
 // Import Icons
-import { ICO_Github } from '../../../assets/images/icons/custom/index.js';
+import { ICO_Github } from '@/assets/images/icons/custom/index.js';
 </script>
