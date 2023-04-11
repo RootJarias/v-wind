@@ -1,6 +1,9 @@
-# v-wind
+# V-Wind
 
-This template should help get you started developing with Vue 3 in Vite.
+- Provides set of different variants components created with Tailwind CSS with better design and more functionalities.
+- Provides different layouts that can be used in other projects.
+- Provides tools to easily manage your project.
+
 
 ## Recommended IDE Setup
 
