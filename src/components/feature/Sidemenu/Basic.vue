@@ -143,6 +143,7 @@ const hideDrawer = () => {
     drawerStore.showDrawer(false);
   }, 300);
 };
+
 // Initialize Functions
 onMounted(() => {
   setWaveSky();
