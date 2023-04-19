@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed z-10 h-screen bg-gray-200 drop-shadow-md w-[18em]">
+  <nav class="fixed z-30 h-screen bg-gray-200 drop-shadow-md w-[18em]">
     <section
       class="relative h-[20em] w-full overflow-hidden ease-in-out duration-[5000ms]"
       :class="waveSky.color"
@@ -33,6 +33,7 @@
             _active: route.name === 'BaseRoute::components',
           }"
           :to="{ name: 'BaseRoute::components' }"
+          @click="hideDrawer"
         >
           <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Components</span>
@@ -45,6 +46,7 @@
             _active: route.name === 'BaseRoute::layouts',
           }"
           :to="{ name: 'BaseRoute::layouts' }"
+          @click="hideDrawer"
         >
           <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Layouts</span>
@@ -57,6 +59,7 @@
             _active: route.name === 'BaseRoute::utilities',
           }"
           :to="{ name: 'BaseRoute::utilities' }"
+          @click="hideDrawer"
         >
           <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Utilities</span>
@@ -69,6 +72,7 @@
             _active: route.name === 'BaseRoute::tools',
           }"
           :to="{ name: 'BaseRoute::tools' }"
+          @click="hideDrawer"
         >
           <font-awesome-icon class="mr-3" :icon="['fas', 'plus']" />
           <span>Tools</span>
@@ -83,6 +87,9 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
+// Import Stores
+import { useDrawerStore } from '@/stores/module/components/drawer';
+
 // Set Datas
 const route = useRoute();
 
@@ -90,6 +97,8 @@ const waveSky = ref({
   dayTimeText: null,
   colorClass: '_waveSky--morning',
 });
+
+const drawerStore = useDrawerStore();
 
 // Set Functions
 const setWaveSky = () => {
@@ -129,6 +138,11 @@ const setWaveSkyColor = (dayTime) => {
   }
 };
 
+const hideDrawer = () => {
+  setTimeout(() => {
+    drawerStore.showDrawer(false);
+  }, 300);
+};
 // Initialize Functions
 onMounted(() => {
   setWaveSky();

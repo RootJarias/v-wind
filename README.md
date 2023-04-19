@@ -4,7 +4,6 @@
 - Provides different layouts that can be used in other projects.
 - Provides tools to easily manage your project.
 
-
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
@@ -62,7 +61,9 @@ npm run test:e2e
 
 - Daisy UI: For tailwind code and UI enchancements. (https://daisyui.com/)
 
-- Fontawesome: Used to apply icon in the page (https://fontawesome.com/docs/web/use-with/vue/)
+- Fontawesome: Used to apply icons in the page (https://fontawesome.com/docs/web/use-with/vue/)
+
+- Icones: Used to apply custom icons in the page (https://icones.js.org/collection/all?s=menu)
 ```
 
 #### Script Code Standards

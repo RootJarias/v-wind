@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="fixed z-20 h-16 bg-white drop-shadow-md px-16 py-2 w-full md:px-4"
+    class="fixed z-40 h-16 bg-white drop-shadow-md px-16 py-2 w-full md:px-4"
   >
     <div class="container h-full flex justify-between">
       <router-link class="_link" :to="{ name: 'BaseRoute::home' }">
@@ -59,13 +59,11 @@
         </li>
       </ul>
       <div class="hidden md:block">
-        <button class="_link text-xl">
+        <button class="_link text-xl" @click="drawerStore.showDrawer(true)">
           <font-awesome-icon :icon="['fas', 'fa-bars']" />
         </button>
       </div>
     </div>
-
-    <CMP_Drawer />
   </nav>
 </template>
 
@@ -73,12 +71,14 @@
 // Base Imports
 import { useRoute } from 'vue-router';
 
-// Import Components
-import CMP_Drawer from '@/components/feature/Drawer/Basic.vue';
-
 // Import Icons
 import { ICO_Github } from '@/assets/images/icons/custom/index.js';
 
+// Import Stores
+import { useDrawerStore } from '@/stores/module/components/drawer';
+
 // Set Datas
 const route = useRoute();
+
+const drawerStore = useDrawerStore();
 </script>

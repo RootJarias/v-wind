@@ -6,7 +6,7 @@ import App from './App.vue';
 import router from './router';
 
 // Pinia v2.0.32
-import { createPinia } from 'pinia';
+import pinia from './stores/index';
 
 /* Tailwind CSS v3.3.1 */
 import './assets/css/tailwind.css';
@@ -21,7 +21,7 @@ const app = createApp(App);
 app.component('font-awesome-icon', FontAwesomeIcon);
 
 // Register Facilities
-app.use(createPinia());
+app.use(pinia);
 app.use(router);
 
 app.mount('#app');
