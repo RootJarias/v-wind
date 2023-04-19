@@ -1,7 +1,6 @@
 /* 
   Notes:
     - Hex Shade Generator (https://maketintsandshades.com/)
-    - Hex Shade Generator (https://maketintsandshades.com/)
 /*
 
 /** @type {import('tailwindcss').Config} */
