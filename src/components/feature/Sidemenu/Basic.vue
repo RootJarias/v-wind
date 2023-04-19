@@ -92,12 +92,10 @@ import { useDrawerStore } from '@/stores/module/components/drawer';
 
 // Set Datas
 const route = useRoute();
-
 const waveSky = ref({
   dayTimeText: null,
   colorClass: '_waveSky--morning',
 });
-
 const drawerStore = useDrawerStore();
 
 // Set Functions

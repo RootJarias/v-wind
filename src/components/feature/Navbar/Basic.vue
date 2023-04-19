@@ -59,7 +59,14 @@
         </li>
       </ul>
       <div class="hidden md:block">
-        <button class="_link text-xl" @click="drawerStore.showDrawer(true)">
+        <button
+          class="_link text-xl"
+          @click="
+            drawerStore.$state.show
+              ? drawerStore.showDrawer(false)
+              : drawerStore.showDrawer(true)
+          "
+        >
           <font-awesome-icon :icon="['fas', 'fa-bars']" />
         </button>
       </div>
@@ -79,6 +86,5 @@ import { useDrawerStore } from '@/stores/module/components/drawer';
 
 // Set Datas
 const route = useRoute();
-
 const drawerStore = useDrawerStore();
 </script>

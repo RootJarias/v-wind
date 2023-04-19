@@ -57,6 +57,11 @@ const meta = {
           content: 'This is a example meta description.',
         },
       ],
+      modules: {
+        buttons: {
+          title: `${appName} - Components :: Buttons`,
+        },
+      },
     },
     layouts: {
       title: `${appName} - Layouts`,

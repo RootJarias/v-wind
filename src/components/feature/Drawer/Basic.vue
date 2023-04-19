@@ -1,16 +1,21 @@
 <template>
-  <div class="absolute z-20 h-screen w-full overflow-hidden">
+  <div
+    class="absolute z-20 overflow-hidden"
+    :class="{
+      'h-screen w-full': drawerStore.$state.show === true,
+    }"
+  >
     <Transition name="_overlay">
       <div
-        class="_black-gradient h-screen w-[150vw] opacity-50 top-0 left-0"
-        v-if="drawerStore.$state.show"
+        class="_black-gradient h-full w-[150vw] opacity-50 top-0 left-0"
+        v-show="drawerStore.$state.show"
         @click="drawerStore.showDrawer(false)"
       ></div>
     </Transition>
   </div>
 
   <Transition name="_submenu">
-    <CMP_Sidemenu_Basic v-if="drawerStore.$state.show" />
+    <CMP_Sidemenu_Basic v-show="drawerStore.$state.show" />
   </Transition>
 </template>
 

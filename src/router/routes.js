@@ -30,9 +30,21 @@ const routes = [
       },
       {
         path: 'components',
-        name: 'BaseRoute::components',
-        component: () => import('@/views/Components.vue'),
-        meta: meta.base.components,
+        component: () => import('@/views/components/Index.vue'),
+        children: [
+          {
+            path: '',
+            name: 'BaseRoute::components',
+            component: () => import('@/views/components/List.vue'),
+            meta: meta.base.components,
+          },
+          {
+            path: 'buttons',
+            name: 'BaseRoute::components:buttons',
+            component: () => import('@/views/components/modules/Buttons.vue'),
+            meta: meta.base.components.button,
+          },
+        ],
       },
       {
         path: 'layouts',

@@ -18,7 +18,7 @@
   </section>
 </template>
 
-<style>
+<style scoped>
 .bg-404 {
   background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
   background-position: center;
