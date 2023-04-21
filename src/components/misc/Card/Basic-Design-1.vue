@@ -3,6 +3,7 @@
     <h3>Card Title</h3>
     <p class="_text-ellipsis-2">
       Card description with lots of great facts and interesting details. Card
+      description with lots of great facts and interesting details. Card
       description with lots of great facts and interesting details.
     </p>
     <div class="_arrow">
