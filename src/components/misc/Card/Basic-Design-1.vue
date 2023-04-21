@@ -1,11 +1,14 @@
 <template>
   <div class="_card">
-    <h3>Card Title</h3>
-    <p class="_text-ellipsis-2">
-      Card description with lots of great facts and interesting details. Card
-      description with lots of great facts and interesting details. Card
-      description with lots of great facts and interesting details.
-    </p>
+    <div class="_overlay"></div>
+    <div class="_content">
+      <h3>Card Title</h3>
+      <p class="_text-ellipsis-2">
+        Card description with lots of great facts and interesting details. Card
+        description with lots of great facts and interesting details. Card
+        description with lots of great facts and interesting details.
+      </p>
+    </div>
     <div class="_arrow">
       <font-awesome-icon class="_icon" :icon="['fas', 'arrow-right-long']" />
     </div>
@@ -25,21 +28,26 @@ const props = defineProps({
   @apply relative z-0 block w-full bg-slate-100 rounded-md p-6 m-2 overflow-hidden border border-slate-200 cursor-pointer ease-in-out duration-200 select-none;
 }
 ._card:hover {
-  @apply bg-slate-200 drop-shadow-lg border border-primary-500;
+  @apply bg-slate-200 drop-shadow-lg border border-primary-500 text-white delay-150;
 }
-._card:before {
-  @apply absolute z-[-1] top-[-16px] right-[-16px] h-[32px] w-[32px] bg-primary-500 rounded-full scale-100 ease-in-out duration-500;
-  content: '';
-}
-._card:hover:before {
-  @apply scale-[4] bg-primary-300;
-}
-
 ._card:active {
   @apply scale-95;
 }
+
+._card ._overlay {
+  @apply absolute top-0 right-0 z-[-1] h-[32px] w-[32px] bg-primary-500 rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[32px] ease-in-out duration-300 delay-150;
+}
+
+._card:hover ._overlay {
+  @apply h-full w-full rounded-none;
+}
+
 ._card ._arrow {
-  @apply absolute top-0 right-0 flex items-center justify-center h-[32px] w-[32px] p-5 bg-primary-500 overflow-hidden rounded-tl-[0] rounded-tr-[4px] rounded-br-[0] rounded-bl-[32px];
+  @apply absolute top-0 right-0 z-20 flex items-center justify-center h-[32px] w-[32px] p-5 bg-primary-500 overflow-hidden rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[32px];
+}
+
+._card:hover ._arrow {
+  @apply bg-primary-600;
 }
 
 ._card ._arrow ._icon {

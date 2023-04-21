@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="flex justify-start">
-      <CMP_Card_LogoTitleDesign1
+      <CMP_Card_Dimmer
         class="m-2"
         :title="item.path"
         :path-name="item.name"
@@ -18,7 +18,7 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 // Import Components
-import CMP_Card_LogoTitleDesign1 from '@/components/misc/Card/Basic-Design-1.vue';
+import CMP_Card_Dimmer from '@/components/misc/Card/Basic-Design-1.vue';
 
 // Set Datas
 const route = useRoute();
