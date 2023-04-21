@@ -18,7 +18,7 @@ import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 // Import Components
-import CMP_Card_Dimmer from '@/components/misc/Card/asd.vue';
+import CMP_Card_Dimmer from '@/components/misc/Card/Design-2.vue';
 
 // Set Datas
 const route = useRoute();

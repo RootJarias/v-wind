@@ -22,7 +22,7 @@ const props = defineProps({
 
 <style scoped>
 ._card {
-  @apply relative z-0 block w-full bg-slate-100 rounded-md p-6 m-2 overflow-hidden border border-slate-200 cursor-pointer ease-in-out duration-300 select-none;
+  @apply relative z-0 block w-full bg-slate-100 rounded-md p-6 m-2 overflow-hidden border border-slate-200 cursor-pointer ease-in-out duration-200 select-none;
 }
 
 ._card:hover {
