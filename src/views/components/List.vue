@@ -14,15 +14,15 @@
 
 <script setup>
 // Base Imports
-import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { ref } from "vue";
+import { useRoute } from "vue-router";
 
 // Import Components
-import CMP_Card_Dimmer from '@/components/misc/Card/Design-2.vue';
+import CMP_Card_Dimmer from "@/components/misc/Card/Design-1.vue";
 
 // Set Datas
 const route = useRoute();
 const componentModules = route.matched
-  .find((o) => o.path === '/components')
-  .children.filter((o) => o.name !== 'BaseRoute::components');
+  .find((o) => o.path === "/components")
+  .children.filter((o) => o.name !== "BaseRoute::components");
 </script>

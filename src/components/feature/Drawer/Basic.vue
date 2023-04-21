@@ -1,13 +1,15 @@
 <template>
   <div
-    class="absolute z-20 overflow-hidden"
-    :class="{
-      'h-screen w-full': drawerStore.$state.show === true,
-    }"
+    :class="[
+      'absolute z-20 overflow-hidden',
+      {
+        'h-screen w-full': drawerStore.$state.show === true,
+      },
+    ]"
   >
     <Transition name="_overlay">
       <div
-        class="_black-gradient h-full w-[150vw] opacity-50 top-0 left-0"
+        :class="'_black-gradient left-0 top-0 h-full w-[150vw] opacity-50'"
         v-show="drawerStore.$state.show"
         @click="drawerStore.showDrawer(false)"
       ></div>
@@ -21,10 +23,10 @@
 
 <script setup>
 // Import Components
-import CMP_Sidemenu_Basic from '@/components/feature/Sidemenu/Basic.vue';
+import CMP_Sidemenu_Basic from "@/components/feature/Sidemenu/Basic.vue";
 
 // Import Stores
-import { useDrawerStore } from '@/stores/module/components/drawer';
+import { useDrawerStore } from "@/stores/module/components/drawer";
 
 // Set Datas
 const drawerStore = useDrawerStore();

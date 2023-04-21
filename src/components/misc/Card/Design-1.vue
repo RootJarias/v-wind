@@ -23,11 +23,11 @@ const props = defineProps({
 
 <style scoped>
 ._card {
-  @apply relative z-0 block w-full bg-slate-100 rounded-md p-6 m-2 overflow-hidden border border-slate-200 cursor-pointer ease-in-out duration-200 select-none;
+  @apply relative z-0 m-2 block w-full cursor-pointer select-none overflow-hidden rounded-md border border-slate-200 bg-slate-100 p-6 duration-200 ease-in-out;
 }
 
 ._card:hover {
-  @apply bg-slate-200 drop-shadow-lg border border-primary-500 text-white;
+  @apply border border-primary-500 bg-slate-200 text-white drop-shadow-lg;
 }
 
 ._card:active {
@@ -35,7 +35,7 @@ const props = defineProps({
 }
 
 ._card ._overlay {
-  @apply absolute top-0 right-0 z-[-1] h-[32px] w-[32px] bg-primary-500 rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[32px] ease-in-out duration-300;
+  @apply absolute right-0 top-0 z-[-1] h-[32px] w-[32px] rounded-bl-[32px] rounded-br-none rounded-tl-none rounded-tr-none bg-primary-500 duration-300 ease-in-out;
 }
 
 ._card:hover ._overlay {
@@ -43,7 +43,7 @@ const props = defineProps({
 }
 
 ._card ._arrow {
-  @apply absolute top-0 right-0 z-20 flex items-center justify-center h-[32px] w-[32px] p-5 bg-primary-500 overflow-hidden rounded-tl-none rounded-tr-none rounded-br-none rounded-bl-[32px] ease-in-out duration-700;
+  @apply absolute right-0 top-0 z-20 flex h-[32px] w-[32px] items-center justify-center overflow-hidden rounded-bl-[32px] rounded-br-none rounded-tl-none rounded-tr-none bg-primary-500 p-5 duration-700 ease-in-out;
 }
 
 ._card:hover ._arrow {
@@ -51,6 +51,6 @@ const props = defineProps({
 }
 
 ._card ._arrow ._icon {
-  @apply mt-[-4px] mr-[-4px] text-white;
+  @apply mr-[-4px] mt-[-4px] text-white;
 }
 </style>
