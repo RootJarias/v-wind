@@ -1,15 +1,15 @@
 <template>
-  <div class="_card">
+  <a class="_card" href="#">
     <h3>This is option 3</h3>
     <p>
       Card description with lots of great facts and interesting details. Card
       description with lots of great facts and interesting details. Card
       description with lots of great facts and interesting details.
     </p>
-    <div class="_arrow">
+    <div class="_arrow" href="#">
       <font-awesome-icon class="_icon" :icon="['fas', 'arrow-right-long']" />
     </div>
-  </div>
+  </a>
 </template>
 
 <script setup>

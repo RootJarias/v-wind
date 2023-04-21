@@ -1,14 +1,12 @@
 <template>
   <div class="_card">
     <div class="_overlay"></div>
-    <div class="_content">
-      <h3>Card Title</h3>
-      <p class="_text-ellipsis-2">
-        Card description with lots of great facts and interesting details. Card
-        description with lots of great facts and interesting details. Card
-        description with lots of great facts and interesting details.
-      </p>
-    </div>
+    <h3>Card Title</h3>
+    <p>
+      Card description with lots of great facts and interesting details. Card
+      description with lots of great facts and interesting details. Card
+      description with lots of great facts and interesting details.
+    </p>
     <div class="_arrow">
       <font-awesome-icon class="_icon" :icon="['fas', 'arrow-right-long']" />
     </div>
@@ -27,9 +25,11 @@ const props = defineProps({
 ._card {
   @apply relative z-0 block w-full bg-slate-100 rounded-md p-6 m-2 overflow-hidden border border-slate-200 cursor-pointer ease-in-out duration-200 select-none;
 }
+
 ._card:hover {
   @apply bg-slate-200 drop-shadow-lg border border-primary-500 text-white;
 }
+
 ._card:active {
   @apply scale-95;
 }
