@@ -61,6 +61,9 @@ const meta = {
         buttons: {
           title: `${appName} - Components :: Buttons`,
         },
+        cards: {
+          title: `${appName} - Components :: Cards`,
+        },
       },
     },
     layouts: {

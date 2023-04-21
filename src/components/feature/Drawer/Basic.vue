@@ -35,7 +35,7 @@ const drawerStore = useDrawerStore();
   background: linear-gradient(to right, black 80%, rgba(0, 0, 0, 0));
 }
 ._overlay-enter-active {
-  transition: all 0.2s ease-out;
+  transition: all 0.4s ease-out;
 }
 
 ._overlay-leave-active {
@@ -43,11 +43,11 @@ const drawerStore = useDrawerStore();
 }
 
 ._submenu-enter-active {
-  transition: all 0.4s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 ._submenu-leave-active {
-  transition: all 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
 ._overlay-enter-from,

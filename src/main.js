@@ -1,6 +1,6 @@
 // Base Imports
 import { createApp } from 'vue';
-import App from './App.vue';
+import App from '@/App.vue';
 
 // Vue Router v4.1.6
 import router from './router';
@@ -15,13 +15,13 @@ import './assets/css/tailwind.css';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import './assets/images/icons/fontawesome';
 
-const app = createApp(App);
+const _App = createApp(App);
 
 // Register Global Components
-app.component('font-awesome-icon', FontAwesomeIcon);
+_App.component('font-awesome-icon', FontAwesomeIcon);
 
-// Register Facilities
-app.use(pinia);
-app.use(router);
+// Register Facilities/3rd Party Components
+_App.use(pinia);
+_App.use(router);
 
-app.mount('#app');
+_App.mount('#app');

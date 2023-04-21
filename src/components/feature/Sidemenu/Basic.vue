@@ -17,9 +17,9 @@
       </div>
     </section>
     <ul
-      class="flex flex-col space-y-2 h-[calc(100%-24em)] overflow-auto py-5 ease-in-out duration-300 border-l-8 hover:border-l-primary-600"
+      class="flex flex-col space-y-2 h-[calc(100%-24em)] overflow-auto py-5 ease-in-out duration-300 border-l-8 hover:border-l-primary-500"
       :class="{
-        'border-l-primary-600':
+        'border-l-primary-500':
           route.name === 'BaseRoute::components' ||
           route.name === 'BaseRoute::layouts' ||
           route.name === 'BaseRoute::utilities' ||
@@ -294,10 +294,10 @@ onMounted(() => {
 }
 
 ._sidemenu-item {
-  @apply block w-[calc(100%-30px)] px-5 py-3 rounded-tr-[20px] rounded-br-[20px] text-gray-700 font-semibold uppercase ease-in-out duration-100 hover:bg-primary-600 hover:text-white hover:drop-shadow-lg active:scale-100;
+  @apply block w-[calc(100%-30px)] px-5 py-3 rounded-tr-[20px] rounded-br-[20px] text-gray-700 font-semibold uppercase ease-in-out duration-100 hover:bg-primary-500 hover:text-white hover:drop-shadow-lg active:scale-100;
 }
 
 ._sidemenu-item._active {
-  @apply bg-primary-600 text-white drop-shadow-lg scale-105 active:scale-100;
+  @apply bg-primary-500 text-white drop-shadow-lg scale-105 active:scale-100;
 }
 </style>

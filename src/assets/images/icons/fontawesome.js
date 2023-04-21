@@ -14,9 +14,8 @@ import {
   faBookmark,
   faMobileAlt,
   faCircleInfo,
+  faArrowRightLong,
 } from '@fortawesome/free-solid-svg-icons';
-
-import { faBell } from '@fortawesome/free-regular-svg-icons';
 
 // Register Icon to Library
 library.add(faCaretDown);
@@ -30,5 +29,4 @@ library.add(faPlus);
 library.add(faBookmark);
 library.add(faMobileAlt);
 library.add(faCircleInfo);
-
-library.add(faBell);
+library.add(faArrowRightLong);

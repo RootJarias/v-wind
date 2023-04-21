@@ -39,10 +39,16 @@ const routes = [
             meta: meta.base.components,
           },
           {
+            path: 'cards',
+            name: 'BaseRoute::components:cards',
+            component: () => import('@/views/components/modules/Cards.vue'),
+            meta: meta.base.components.modules.cards,
+          },
+          {
             path: 'buttons',
             name: 'BaseRoute::components:buttons',
             component: () => import('@/views/components/modules/Buttons.vue'),
-            meta: meta.base.components.button,
+            meta: meta.base.components.modules.buttons,
           },
         ],
       },

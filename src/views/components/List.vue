@@ -1,6 +1,15 @@
 <template>
-  <section>List</section>
-  {{ route.options }}
+  <section>
+    <div class="flex justify-start">
+      <CMP_Card_LogoTitleDesign1
+        class="m-2"
+        :title="item.path"
+        :path-name="item.name"
+        v-for="(item, index) in componentModules"
+        :key="index"
+      />
+    </div>
+  </section>
 </template>
 
 <script setup>
@@ -8,9 +17,12 @@
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
+// Import Components
+import CMP_Card_LogoTitleDesign1 from '@/components/misc/Card/Basic-Design-1.vue';
+
 // Set Datas
 const route = useRoute();
-const routeChildCount = ref(0);
-
-// Set Functions
+const componentModules = route.matched
+  .find((o) => o.path === '/components')
+  .children.filter((o) => o.name !== 'BaseRoute::components');
 </script>
