@@ -9,7 +9,7 @@
   >
     <Transition name="_overlay">
       <div
-        :class="'_black-gradient left-0 top-0 h-full w-[150vw] opacity-50'"
+        :class="'_black-gradient'"
         v-show="drawerStore.$state.show"
         @click="drawerStore.showDrawer(false)"
       ></div>
@@ -34,6 +34,7 @@ const drawerStore = useDrawerStore();
 
 <style scoped>
 ._black-gradient {
+  @apply left-0 top-0 h-full w-[150vw] opacity-50;
   background: linear-gradient(to right, black 80%, rgba(0, 0, 0, 0));
 }
 ._overlay-enter-active {

@@ -2,8 +2,8 @@
   <nav :class="['fixed z-30 h-screen w-[18em] bg-gray-200 drop-shadow-md']">
     <section
       :class="[
-        'relative h-[20em] w-full overflow-hidden duration-[5000ms] ease-in-out',
         waveSky.color,
+        'relative h-[20em] w-full overflow-hidden duration-[5000ms] ease-in-out',
       ]"
     >
       <div

@@ -1,5 +1,5 @@
 // Fontawesome Core Imports
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 // Used Fontawesome Icons
 import {
@@ -15,7 +15,8 @@ import {
   faMobileAlt,
   faCircleInfo,
   faArrowRightLong,
-} from '@fortawesome/free-solid-svg-icons';
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 // Register Icon to Library
 library.add(faCaretDown);
@@ -30,3 +31,4 @@ library.add(faBookmark);
 library.add(faMobileAlt);
 library.add(faCircleInfo);
 library.add(faArrowRightLong);
+library.add(faUser);

@@ -1,10 +1,8 @@
 <template>
   <section>
-    <div class="flex justify-start">
+    <div :class="['flex justify-start']">
       <CMP_Card_Dimmer
-        class="m-2"
-        :title="item.path"
-        :path-name="item.name"
+        :class="['m-2']"
         v-for="(item, index) in componentModules"
         :key="index"
       />
@@ -14,11 +12,10 @@
 
 <script setup>
 // Base Imports
-import { ref } from "vue";
 import { useRoute } from "vue-router";
 
 // Import Components
-import CMP_Card_Dimmer from "@/components/misc/Card/Design-1.vue";
+import CMP_Card_Dimmer from "@/components/misc/Card/Dimmer.vue";
 
 // Set Datas
 const route = useRoute();
